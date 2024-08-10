@@ -4,8 +4,6 @@
   };
    environment.systemPackages = with pkgs; [
     alacritty
-    (azure-cli.withExtensions [ azure-cli.extensions.aks-preview ])
-    bicep
     curl
     dunst
     firefox
@@ -16,7 +14,6 @@
     hyprland
     hyprpaper
     jq
-    killall
     meson
     mpd
     mullvad
@@ -27,7 +24,6 @@
     nordzy-icon-theme
     nwg-look
     pavucontrol
-    pkgs.azure-cli
     pkgs.brave
     pkgs.grim
     pkgs.hypridle
