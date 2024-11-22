@@ -23,8 +23,6 @@
     nordzy-cursor-theme
     nordzy-icon-theme
     nwg-look
-    pavucontrol
-    pkgs.brave
     pkgs.grim
     pkgs.hypridle
     pkgs.hyprlock
