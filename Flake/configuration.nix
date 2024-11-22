@@ -73,7 +73,7 @@
   users.users.nix = {
     isNormalUser = true;
     description = "nix";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "libvirtd" "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
 
