@@ -29,6 +29,7 @@
     hyprlock
     neovim
     slurp
+    starship
     swappy
     teams-for-linux
     rofi-wayland
