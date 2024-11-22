@@ -1,0 +1,25 @@
+inputbar {
+  enabled: false;
+  children: [entry];
+}
+
+window { 
+	location: center;
+	y-offset: 35px;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     3;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    spacing:                     10px;
+}
+element selected.normal {
+    background-color:            #e69875;
+    text-color:                  #333c43;
+}

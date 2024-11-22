@@ -1,0 +1,90 @@
+configuration {
+  display-drun: "Applications:";
+  display-window: "Windows:";
+  drun-display-format: "{name}";
+  font: "FiraCode Nerd Font 11";
+  modi: "window,run,drun";
+  show-icons: true;
+  icon-theme: "Nordzy-green-dark";
+}
+
+@theme "/dev/null"
+
+* {
+  bg: #323d43;
+  bg-alt: #505a60;
+  frame: #A7C080;
+
+  fg: #d8caac;
+  fg-alt: #d8caac;
+
+  background-color: @bg;
+  border: 0;
+  margin: 0;
+  padding: 2;
+  spacing: 0;
+}
+
+window {
+  width: 30%;
+  border-radius: 12;
+  border: 2;
+  border-color: @frame;
+}
+
+element {
+  padding: 6;
+  text-color: @fg-alt;
+  border-radius: 10;
+
+}
+
+element selected {
+  text-color: @fg;
+  background-color: @bg-alt;
+  border-radius: 10;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 30;
+  background-color: #11121D00;
+}
+
+entry {
+  background-color: @bg-alt;
+  padding: 12 12;
+  text-color: @fg;
+  border-radius: 0 10 10 0;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+listview {
+  padding: 4 2;
+  background-color: @bg;
+  columns: 1;
+  lines: 8;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [inputbar, listview];
+}
+
+prompt {
+  background-color: @bg-alt;
+  enabled: true;
+  padding: 12 12;
+  text-color: @fg;
+  border-radius: 10 0 0 10;
+}
+
+/* vim: ft=sass
