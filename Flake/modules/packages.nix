@@ -23,7 +23,7 @@
     nordzy-cursor-theme
     nordzy-icon-theme
     nwg-look
-    pkgs.everforest-gtk-theme
+    pkgs.unstable.everforest-gtk-theme
     pkgs.grim
     pkgs.hypridle
     pkgs.hyprlock
