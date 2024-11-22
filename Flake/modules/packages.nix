@@ -24,6 +24,7 @@
     nordzy-icon-theme
     nwg-look
     unstable.everforest-gtk-theme
+    unstable.vscode
     grim
     hypridle
     hyprlock
