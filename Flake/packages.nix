@@ -23,9 +23,11 @@
     nordzy-cursor-theme
     nordzy-icon-theme
     nwg-look
+    pkgs.everforest-gtk-theme
     pkgs.grim
     pkgs.hypridle
     pkgs.hyprlock
+    pkgs.neovim
     pkgs.slurp
     pkgs.swappy
     pkgs.teams-for-linux
