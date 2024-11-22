@@ -1,0 +1,208 @@
+@import "./everforest.css";
+
+* {
+    font-family: "JetBrains Mono", "Font Awesome 6 Free";
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+window#waybar {
+    background: @bg1;
+    border-bottom: none;
+    color: @fg;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    padding: 2px;
+    background-color: @bg_dim;
+    color: @fg;
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: none;
+    /* Avoid rounded borders under each workspace name */
+    border: none;
+    min-width: 28px;
+    border-radius: 8px;
+    margin: 3px;
+}
+
+#workspaces button.active {
+    background-color: @bg_green;
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    background-color: rgba(230, 126, 128, 0.5);
+}
+
+#mode {
+    background-color: @bg1;
+    border-bottom: 3px solid @black;
+}
+#clock,
+#custom-powermenu,
+#custom-weather,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+
+#mpd {
+    padding: 0 6px;
+    margin: 3px 3px;
+    color: @fg;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+    color: @fg;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#battery {
+     background-color: @bg1;
+    color: @green;
+}
+
+
+#battery.charging {
+    color: @black;
+     background-color: @bg1;
+}
+
+#battery.full {
+    background-color: @bg1;
+    color: @green;
+}
+
+#battery.warning {
+    color: @red;
+    background-color: @bg1;
+}
+
+#battery.plugged {
+    color: @green;
+     background-color: @bg1;
+}
+
+@keyframes blink {
+    to {
+        background-color: @bg1;
+        color: #4F585E;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color:  @bg1;
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: @black;
+}
+
+#clock {
+    background-color: @bg1;
+    color: @purple;
+}
+
+#custom-powermenu {
+    background-color: @bg1; 
+    color: @orange;
+}
+
+#cpu {
+    background-color: @bg1;
+    color: @blue;
+}
+
+#memory {
+    background-color: @bg1;
+    color: @yellow;
+}
+
+#backlight {
+    background-color: @bg1;
+    color: @fg;
+}
+
+#pulseaudio {
+    background-color: @bg1;
+    color: @fg;
+}
+
+#pulseaudio.muted {
+    background-color: @bg1;
+    color: #2a5c45;
+}
+
+#custom-media {
+    background-color: @bg1;
+    color: @fg;
+    min-width: 100px;
+}
+
+#temperature {
+    background-color: @bg1;
+}
+
+#temperature.critical {
+    background-color: @red;
+}
+
+#tray {
+    background-color: @bg2;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red;
+}
+
+#mpd {
+    background-color: @bg1;
+    color: @fg;
+}
+
+#mpd.disconnected {
+    background-color: @red;
+}
+
+#mpd.stopped {
+    background-color: @bg_dim;
+}
+
+#mpd.paused {
+    background-color: @aqua;
+}

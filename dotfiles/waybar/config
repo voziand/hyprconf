@@ -1,0 +1,142 @@
+{
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right":10,
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 36, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 1, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces"],
+    // "hyprland/mode", "custom/media"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["battery", "cpu", "memory", "pulseaudio", "backlight", "clock", "tray", "custom/powermenu"],
+    
+    // Modules configuration
+    "hyprland/workspaces": {
+         "disable-scroll": true,
+         "active-only": false,
+         "all-outputs": true,
+         "format": "{icon}",
+         "format-icons": {
+             "1": "1",
+             "2": "2",
+             "3": "3",
+             "4": "4",
+             "5": "5",
+             "6": "6",
+             "7": "7",
+             "8": "8",
+             "9": "9",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }
+     },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "hyprland/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+     
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format-alt": "{:%Y-%m-%d}",
+        "on-click": "gnome-calendar"
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {used:0.1f}G"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["🔅", "🔆"]
+    },
+    "battery": {
+        "states": {
+            "warning": 40,
+            "critical": 20
+        },
+        "interval": 30,
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-full": "{capacity}% 󰁹",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁿", "󰁹"]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " ",
+        "format-ethernet": "󰈀",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+	
+	"custom/powermenu":{ 
+		"format": " ", 
+		"on-click-right": "~/.config/waybar/scripts/powermenu",
+	},
+	
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon} 󰂰",
+        "format-bluetooth-muted": "  {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": "",
+            "portable": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "~/.config/waybar/scripts/audio_menu.sh"
+    },
+    "custom/chatgpt":{
+		"format": " 󰚩 ",
+		"on-click": "brave --app=https://chat.openai.com"
+    },
+    "custom/office":{
+		"format": " 󰍲 ",
+		"on-click": "brave --app=https://outlook.office.com"
+    },
+}
+
