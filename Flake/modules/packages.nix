@@ -23,14 +23,14 @@
     nordzy-cursor-theme
     nordzy-icon-theme
     nwg-look
-    pkgs.unstable.everforest-gtk-theme
-    pkgs.grim
-    pkgs.hypridle
-    pkgs.hyprlock
-    pkgs.neovim
-    pkgs.slurp
-    pkgs.swappy
-    pkgs.teams-for-linux
+    unstable.everforest-gtk-theme
+    grim
+    hypridle
+    hyprlock
+    neovim
+    slurp
+    swappy
+    teams-for-linux
     rofi-wayland
     waybar 
     wayland-protocols
