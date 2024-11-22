@@ -10,9 +10,9 @@
       ./hardware-configuration.nix
       ./modules/bluetooth.nix
       ./modules/sound.nix
-      ./packages.nix
-      ./laptop.nix
-      ./virtmanager.nix
+      ./modules/packages.nix
+      ./modules/laptop.nix
+      ./modules/virtmanager.nix
     ];
   # Services
   services.mullvad-vpn.enable = true;
