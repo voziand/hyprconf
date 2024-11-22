@@ -3,7 +3,6 @@
   services.logind.lidSwitchDocked = "ignore";
   
   services.acpid.enable = true;
-  powerManagement.enable = true;
   services.tlp = {
     enable = false;
     settings = {
