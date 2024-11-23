@@ -79,6 +79,6 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
-  system.stateVersion = "23.11"; # no need to modify this boy
+  system.stateVersion = "24.05"; # no need to modify this boy
 
 }
