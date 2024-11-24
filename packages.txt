@@ -15,6 +15,7 @@ jq
 mpd
 neofetch
 neovim
+NetworkManager-applet
 npm
 nwg-look
 pipewire-libjack-0_3
