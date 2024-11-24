@@ -13,6 +13,7 @@ mpd
 neofetch
 neovim
 NetworkManager
+npm
 nwg-look
 pipewire-libjack-0_3
 pipewire-pulseaudio
