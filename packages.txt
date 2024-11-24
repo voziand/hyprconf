@@ -1,6 +1,7 @@
 alacritty
 dunst
 firefox
+gcc
 geany
 grim
 htop
