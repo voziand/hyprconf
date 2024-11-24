@@ -11,3 +11,6 @@ cd themes
 ./install.sh -c dark -t green -s compact -l
 cd ..
 cd ..
+
+mkdir -p Pictures/wallpapers
+wget -O everforest.jpg "https://images.wallpaperscraft.com/image/single/forest_stairs_fog_168575_3840x2160.jpg"
