@@ -2,7 +2,6 @@ alacritty
 blueman
 dunst
 firefox
-fira-code-fonts
 gcc
 geany
 grim
