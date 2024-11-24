@@ -15,6 +15,7 @@ neovim
 NetworkManager
 nwg-look
 pipewire-pulseaudio
+pulseaudio-utils
 qt6-wayland
 rofi-wayland
 slurp
