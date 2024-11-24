@@ -12,6 +12,10 @@ cd themes
 cd ..
 cd ..
 
+sudo zypper addrepo https://download.opensuse.org/repositories/home:mohms/openSUSE_Tumbleweed/home:mohms.repo
+sudo zypper refresh
+sudo zypper install nerd-fonts-firacode
+
 mkdir -p ~/Pictures/wallpapers
 cd ~/Pictures/wallpapers
 wget -O everforest.jpg "https://images.wallpaperscraft.com/image/single/forest_stairs_fog_168575_3840x2160.jpg"
