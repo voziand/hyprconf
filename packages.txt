@@ -14,8 +14,8 @@ neofetch
 neovim
 NetworkManager
 nwg-look
+pipewire-libjack-0_3
 pipewire-pulseaudio
-pulseaudio-utils
 qt6-wayland
 rofi-wayland
 slurp
