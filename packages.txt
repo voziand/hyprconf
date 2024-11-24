@@ -4,6 +4,7 @@ firefox
 gcc
 geany
 grim
+gtk2-engine-murrine
 htop
 hypridle
 hyprland
