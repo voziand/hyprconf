@@ -12,5 +12,7 @@ cd themes
 cd ..
 cd ..
 
-mkdir -p Pictures/wallpapers
+mkdir -p ~/Pictures/wallpapers
+cd ~/Pictures/wallpapers
 wget -O everforest.jpg "https://images.wallpaperscraft.com/image/single/forest_stairs_fog_168575_3840x2160.jpg"
+cd
