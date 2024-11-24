@@ -1,2 +1,2 @@
-systemctl --user start pipewire.service
-systemctl --user start wireplumber.service
+systemctl --user enable pipewire.service
+systemctl --user enable wireplumber.service
