@@ -15,10 +15,12 @@ cd ..
 sudo zypper addrepo https://download.opensuse.org/repositories/home:mohms/openSUSE_Tumbleweed/home:mohms.repo
 sudo zypper refresh
 sudo zypper install nerd-fonts-firacode
-
+# setup azure cli + bicep
 zypper addrepo https://download.opensuse.org/repositories/Cloud:Tools/openSUSE_Tumbleweed/Cloud:Tools.repo
 zypper refresh
 zypper install azure-cli
+curl -fLO https://github.com/Azure/bicep/releases/latest/download/bicep-langserver.zip
+unzip -d /usr/local/bin/bicep-langserver bicep-langserver.zip
 
 mkdir -p ~/Pictures/wallpapers
 cd ~/Pictures/wallpapers
