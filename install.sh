@@ -1,3 +1,5 @@
+sudo xargs -a packages.txt sudo zypper install -y
+
 systemctl --user enable pipewire.service
 systemctl --user enable wireplumber.service
 
