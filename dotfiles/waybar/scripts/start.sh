@@ -1,5 +1,3 @@
-#!/bin/sh
-
+#!/usr/bin/env bash
 killall waybar &&
-
 waybar &
