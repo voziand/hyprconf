@@ -12,6 +12,7 @@ hyprland
 hyprlock
 hyprwayland-scanner
 jq
+libnotify-tools
 mpd
 neofetch
 neovim
