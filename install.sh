@@ -25,7 +25,4 @@ curl -fLO https://github.com/Azure/bicep/releases/latest/download/bicep-langserv
 unzip -d /usr/local/bin/bicep-langserver bicep-langserver.zip
 
 mkdir -p ~/Pictures/wallpapers
-cd ~/Pictures/wallpapers
-wget -O everforest.jpg "https://images.wallpaperscraft.com/image/single/forest_stairs_fog_168575_3840x2160.jpg"
-cd
-
+cp  everforest.jpg ~/Pictures/wallpapers/
