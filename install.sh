@@ -21,6 +21,11 @@ sudo zypper install nerd-fonts-firacode
 zypper addrepo https://download.opensuse.org/repositories/Cloud:Tools/openSUSE_Tumbleweed/Cloud:Tools.repo
 zypper refresh
 zypper install azure-cli
+# bicep install
+curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+chmod +x ./bicep
+sudo mv ./bicep /usr/local/bin/bicep
+# bicep language server
 curl -fLO https://github.com/Azure/bicep/releases/latest/download/bicep-langserver.zip
 unzip -d /usr/local/bin/bicep-langserver bicep-langserver.zip
 
