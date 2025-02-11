@@ -39,7 +39,7 @@ sudo mv ./bicep /usr/local/bin/bicep
 # bicep language server
 curl -fLO https://github.com/Azure/bicep/releases/latest/download/bicep-langserver.zip
 sudo unzip -d /usr/local/bin/bicep-langserver bicep-langserver.zip
-
+# wallpaper
 mkdir -p ~/Pictures/wallpapers
 cp  everforest.jpg ~/Pictures/wallpapers/
 
