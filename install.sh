@@ -4,9 +4,6 @@ currentdir=$(pwd)
 #for i in `cat packages.txt` ; do sudo zypper install -y $i; done
 sudo zypper install -y $(cat packages.txt)
 
-systemctl --user enable pipewire.service
-systemctl --user enable wireplumber.service
-
 git clone https://github.com/alvatip/Nordzy-icon
 cd Nordzy-icon/
 sudo ./install.sh -t green -c dark
@@ -47,3 +44,6 @@ sudo unzip -d /usr/local/bin/bicep-langserver bicep-langserver.zip
 
 mkdir -p ~/Pictures/wallpapers
 cp  everforest.jpg ~/Pictures/wallpapers/
+
+systemctl --user enable pipewire.service
+systemctl --user enable wireplumber.service
