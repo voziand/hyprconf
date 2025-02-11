@@ -1,7 +1,8 @@
 currentdir=$(pwd)
-user=$(whoami)
+#user=$(whoami)
 
-for i in `cat packages.txt` ; do sudo zypper install -y $i; done
+#for i in `cat packages.txt` ; do sudo zypper install -y $i; done
+sudo zypper install -y $(cat packages.txt)
 
 systemctl --user enable pipewire.service
 systemctl --user enable wireplumber.service
