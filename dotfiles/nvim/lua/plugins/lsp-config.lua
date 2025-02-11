@@ -12,10 +12,6 @@ return {
         ensure_installed = {
           "lua_ls",
           "bicep",
-          "bashls",
-          "azure_pipelines_ls",
-          "jsonls",
-          "pylsp",
           "terraformls",
           "yamlls",
         },

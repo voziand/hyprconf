@@ -1,5 +1,5 @@
 
-@import                          "/home/fedora/.config/rofi/colors.rasi"
+@import                          "/home/dennis/.config/rofi/colors.rasi"
 
 /*****----- Main Window -----*****/
 window {

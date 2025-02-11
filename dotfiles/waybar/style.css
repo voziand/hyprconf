@@ -1,10 +1,10 @@
 @import "./everforest.css";
 
 * {
-    font-family: "JetBrains Mono", "Font Awesome 6 Free";
+    font-family: "FiraCode Nerd Font Propo";
     font-weight: bold;
     font-size: 16px;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 window#waybar {
@@ -82,15 +82,15 @@ window#waybar.hidden {
 }
 
 #battery {
-     background-color: @bg1;
+    background-color: @bg1;
     color: @green;
 }
 
 
 #battery.charging {
     color: @black;
-     background-color: @bg1;
-}
+    background-color: @bg1;
+} 
 
 #battery.full {
     background-color: @bg1;
@@ -130,12 +130,13 @@ label:focus {
 
 #clock {
     background-color: @bg1;
-    color: @purple;
+    color: @purple; 
 }
 
 #custom-powermenu {
     background-color: @bg1; 
-    color: @orange;
+    color: @orange; 
+    font-family: "Font Awesome 6 Free";
 }
 
 #cpu {
