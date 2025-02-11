@@ -19,6 +19,7 @@ neovim
 NetworkManager-applet
 npm
 nwg-look
+pipewire
 pipewire-libjack-0_3
 pipewire-pulseaudio
 qt6-wayland
@@ -31,7 +32,6 @@ thunar-archive-plugin
 waybar
 wireplumber-audio
 wl-clipboard
-xarchiver-thunar-archive-plugin
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xwayland
