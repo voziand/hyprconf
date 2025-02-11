@@ -9,6 +9,7 @@ gtk2-engine-murrine
 htop
 hypridle
 hyprland
+hyprland-qtutils
 hyprlock
 hyprwayland-scanner
 jq
