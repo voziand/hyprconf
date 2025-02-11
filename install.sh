@@ -1,4 +1,7 @@
-sudo xargs -a packages.txt sudo zypper install -y
+currentdir=$(pwd)
+user=$(whoami)
+
+for i in `cat packages.txt` ; do sudo zypper install -Sy $i; done
 
 systemctl --user enable pipewire.service
 systemctl --user enable wireplumber.service
@@ -6,13 +9,25 @@ systemctl --user enable wireplumber.service
 git clone https://github.com/alvatip/Nordzy-icon
 cd Nordzy-icon/
 sudo ./install.sh -t green -c dark
-cd ..
+
+cd "$currentdir"
 
 git clone https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme.git
-cd themes
+cd Everforest-GTK-Theme
 ./install.sh -c dark -t green -s compact -l
-cd ..
-cd ..
+cd "$currentdir"
+
+if [ -d "$HOME/.config" ] 
+then
+    cp -r dotfiles/* "$HOME/.config/"
+else
+    mkdir "$HOME/.config"
+    cp -r dotfiles/* "$HOME/.config/"
+fi
+
+# set configuration scripts to be executable
+chmod +x $HOME/.config/hypr/start.sh
+for x in `ls $HOME/.config/waybar/scripts` ; do chmod +x $x; done
 
 sudo zypper addrepo https://download.opensuse.org/repositories/home:mohms/openSUSE_Tumbleweed/home:mohms.repo
 sudo zypper refresh
