@@ -6,11 +6,10 @@ xargs -a packages.txt sudo zypper install -y
 git clone https://github.com/alvatip/Nordzy-icon
 cd Nordzy-icon/
 sudo ./install.sh -t green -c dark
-
 cd "$currentdir"
 
 git clone https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme.git
-cd Everforest-GTK-Theme
+cd Everforest-GTK-Theme/themes
 ./install.sh -c dark -t green -s compact -l
 cd "$currentdir"
 
