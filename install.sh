@@ -27,13 +27,13 @@ fi
 chmod +x $HOME/.config/hypr/start.sh
 for x in `ls $HOME/.config/waybar/scripts` ; do chmod +x $x; done
 
-sudo zypper addrepo https://download.opensuse.org/repositories/home:mohms/openSUSE_Tumbleweed/home:mohms.repo
-sudo zypper refresh
-sudo zypper install nerd-fonts-firacode
+sudo zypper addrepo https://download.opensuse.org/repositories/home:mohms/openSUSE_Tumbleweed/home:mohms.repo -y
+sudo zypper refresh -y
+sudo zypper install -y nerd-fonts-firacode
 # setup azure cli + bicep
-sudo zypper addrepo https://download.opensuse.org/repositories/Cloud:Tools/openSUSE_Tumbleweed/Cloud:Tools.repo
-sudo zypper refresh
-sudo zypper install azure-cli
+sudo zypper addrepo https://download.opensuse.org/repositories/Cloud:Tools/openSUSE_Tumbleweed/Cloud:Tools.repo -y
+sudo zypper refresh -y
+sudo zypper install azure-cli -y
 # bicep install
 curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
 chmod +x ./bicep
