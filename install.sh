@@ -1,8 +1,7 @@
 currentdir=$(pwd)
 #user=$(whoami)
 
-#for i in `cat packages.txt` ; do sudo zypper install -y $i; done
-sudo zypper install -y $(cat packages.txt)
+xargs -a packages.txt sudo zypper install -y
 
 git clone https://github.com/alvatip/Nordzy-icon
 cd Nordzy-icon/
