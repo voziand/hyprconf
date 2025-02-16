@@ -75,6 +75,19 @@ cd "$currentdir"
 mkdir -p ~/Pictures/wallpapers
 cp  everforest.jpg ~/Pictures/wallpapers/
 
+# cursors
+cd cursors
+if [ -d "$HOME/.local/share/icons" ]
+then
+    mkdir "$HOME/.local/share/icons"
+    tar xvf oreo-grey-cursors.tar.gz -C ~/.local/share/icons
+else
+    mkdir "$HOME/.local/share"
+    mkdir "$HOME/.local/share/icons"
+    tar xvf oreo-grey-cursors.tar.gz -C ~/.local/share/icons
+fi
+cd "$currentdir"
+
 systemctl --user enable pipewire.service
 systemctl --user enable wireplumber.service
 systemctl --user start pipewire.service
