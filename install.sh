@@ -71,3 +71,5 @@ systemctl --user enable pipewire.service
 systemctl --user enable wireplumber.service
 systemctl --user start pipewire.service
 systemctl --user start wireplumber.service
+
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
