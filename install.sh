@@ -1,11 +1,8 @@
 currentdir=$(pwd)
 # install packages
 xargs -a packages.txt sudo zypper install -y
-sudo zypper addrepo https://download.opensuse.org/repositories/home:mohms/openSUSE_Tumbleweed/home:mohms.repo -y
-sudo zypper refresh -y
-sudo zypper install -y nerd-fonts-firacode
 # setup azure cli + bicep
-sudo zypper addrepo https://download.opensuse.org/repositories/Cloud:Tools/openSUSE_Tumbleweed/Cloud:Tools.repo -y
+sudo zypper addrepo https://download.opensuse.org/repositories/Cloud:Tools/openSUSE_Tumbleweed/Cloud:Tools.repo
 sudo zypper refresh -y
 sudo zypper install azure-cli -y
 # bicep install
@@ -35,12 +32,42 @@ else
     mkdir "$HOME/.config"
     cp -r dotfiles/* "$HOME/.config/"
 fi
+
+# fonts
+# Fira Code Nerd font
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip
+if [ -d "$HOME/.fonts" ]
+then
+    mkdir "$HOME/.fonts/FiraCode"
+    unzip FiraCode.zip -d "$HOME/.fonts/FiraCode"
+else
+    mkdir "$HOME/.fonts"
+    mkdir "$HOME/.fonts/FiraCode"
+    unzip FiraCode.zip -d "$HOME/.fonts/FiraCode"
+fi
+# weather icons
+git clone https://github.com/erikflowers/weather-icons.git
+cd weather-icons
+if [ -d "$HOME/.fonts" ]
+then
+    mkdir "$HOME/.fonts/WeatherIcons"
+    cp -r font/* "$HOME/.fonts/WeatherIcons"
+else
+    mkdir "$HOME/.fonts"
+    mkdir "$HOME/.fonts/WeatherIcons"
+    cp -r font/* "$HOME/.fonts/WeatherIcons"
+fi
+
 # set configuration scripts to be executable
 chmod +x $HOME/.config/hypr/start.sh
+cd $HOME/.config/waybar/scripts
 for x in `ls $HOME/.config/waybar/scripts` ; do chmod +x $x; done
+cd "$currentdir"
 # wallpaper
 mkdir -p ~/Pictures/wallpapers
 cp  everforest.jpg ~/Pictures/wallpapers/
 
 systemctl --user enable pipewire.service
 systemctl --user enable wireplumber.service
+systemctl --user start pipewire.service
+systemctl --user start wireplumber.service
