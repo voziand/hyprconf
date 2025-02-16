@@ -1,6 +1,14 @@
 currentdir=$(pwd)
 # install packages
 xargs -a packages.txt sudo zypper install -y
+# intall codium
+sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
+printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" | sudo tee -a /etc/zypp/repos.d/vscodium.repo
+sudo zypper in codium
+# install bicep extention
+wget https://github.com/Azure/bicep/releases/download/v0.33.93/vscode-bicep.vsix
+codium --install-extension vscode-bicep.vsix
+
 # setup azure cli + bicep
 sudo zypper addrepo https://download.opensuse.org/repositories/Cloud:Tools/openSUSE_Tumbleweed/Cloud:Tools.repo
 sudo zypper refresh -y
