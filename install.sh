@@ -41,6 +41,10 @@ git clone https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme.git
 cd Everforest-GTK-Theme/themes
 ./install.sh -c dark -t green -s compact -l
 cd "$currentdir"
+sudo flatpak override --filesystem=$HOME/.themes
+sudo flatpak override --filesystem=$HOME/.icons
+sudo flatpak override --filesystem=xdg-config/gtk-4.0
+
 # dotfiles
 mkdir -p "$HOME/.config"
 cp -r dotfiles/* "$HOME/.config/"
