@@ -27,7 +27,7 @@ curl -fLO https://github.com/Azure/bicep/releases/latest/download/bicep-langserv
 sudo unzip -d /usr/local/bin/bicep-langserver bicep-langserver.zip
 
 # install obsidian
-flatpak install flathub md.obsidian.Obsidian
+
 
 # looks
 # icon theme
