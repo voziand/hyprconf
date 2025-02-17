@@ -6,7 +6,8 @@ sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" | sudo tee -a /etc/zypp/repos.d/vscodium.repo
 sudo zypper in codium
 # install bicep extention
-wget https://github.com/Azure/bicep/releases/download/v0.33.93/vscode-bicep.vsix
+latest_version=$(curl -s https://api.github.com/repos/Azure/bicep/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')
+curl -LO "https://github.com/Azure/bicep/releases/download/$latest_version/vscode-bicep.vsix"
 codium --install-extension vscode-bicep.vsix
 
 # setup azure cli + bicep
@@ -14,7 +15,7 @@ sudo zypper addrepo https://download.opensuse.org/repositories/Cloud:Tools/openS
 sudo zypper refresh -y
 sudo zypper install azure-cli -y
 # bicep install
-curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+curl -LO bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
 chmod +x ./bicep
 sudo mv ./bicep /usr/local/bin/bicep
 # bicep language server
@@ -43,7 +44,8 @@ fi
 
 # fonts
 # Fira Code Nerd font
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip
+firacode_latest_version=$(curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')
+curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/$firacode_latest_version/FiraCode.zip
 if [ -d "$HOME/.fonts" ]
 then
     mkdir "$HOME/.fonts/FiraCode"
