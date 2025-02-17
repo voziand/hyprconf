@@ -2,6 +2,7 @@ alacritty
 blueman
 dunst
 firefox
+flatpack
 gcc
 geany
 grim
