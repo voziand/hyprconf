@@ -9,7 +9,7 @@ printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vsco
 sudo zypper in codium
 
 # install obsidian
-obsidian_latest_version=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | grep -Po '"browser_download_url": "\K[^"]*\.AppImage' | grep -v 'arm64')
+$obsidian_download_url=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | grep -Po '"browser_download_url": "\K[^"]*\.AppImage' | grep -v 'arm64')
 curl -LO $obsidian_download_url
 chmod +x Obsidian*.AppImage
 mkdir -p ~/.local/bin
