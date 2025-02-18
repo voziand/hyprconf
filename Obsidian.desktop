@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Obsidian
+Exec=Obsidian.AppImage
+Categories=Office;TextEditor;
+Icon=obsidian
+Comment=Knowledge base and note-taking application
+Path=
+Terminal=false
+StartupNotify=true
