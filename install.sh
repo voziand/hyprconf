@@ -8,6 +8,16 @@ sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" | sudo tee -a /etc/zypp/repos.d/vscodium.repo
 sudo zypper in codium
 
+# install obsidian
+obsidian_latest_version=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | grep -Po '"browser_download_url": "\K[^"]*\.AppImage' | grep -v 'arm64')
+curl -LO $obsidian_download_url
+chmod +x Obsidian*.AppImage
+mkdir -p ~/.local/bin
+mv Obsidian*.AppImage ~/.local/bin/Obsidian.AppImage
+echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
+mkdir -p ~/.local/share/applications
+mv Obsidian.desktop ~/.local/share/applications
+
 # install bicep extention
 latest_version=$(curl -s https://api.github.com/repos/Azure/bicep/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')
 curl -LO "https://github.com/Azure/bicep/releases/download/$latest_version/vscode-bicep.vsix"
@@ -32,7 +42,7 @@ sudo unzip -d /usr/local/bin/bicep-langserver bicep-langserver.zip
 # looks
 # icon theme
 git clone https://github.com/alvatip/Nordzy-icon
-cd Nordzy-icon/
+cmv Obsidian-1.8.4.AppImage ~/.local/bin/d Nordzy-icon/
 sudo ./install.sh -t green -c dark
 cd "$currentdir"
 
