@@ -16,7 +16,7 @@ mkdir -p ~/.local/bin
 mv Obsidian*.AppImage ~/.local/bin/Obsidian.AppImage
 echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
 mkdir -p ~/.local/share/applications
-mv Obsidian.desktop ~/.local/share/applications
+mv assets/Obsidian.desktop ~/.local/share/applications
 
 # install bicep extention
 latest_version=$(curl -s https://api.github.com/repos/Azure/bicep/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')
@@ -35,9 +35,6 @@ sudo mv ./bicep /usr/local/bin/bicep
 # install bicep language server
 curl -fLO https://github.com/Azure/bicep/releases/latest/download/bicep-langserver.zip
 sudo unzip -d /usr/local/bin/bicep-langserver bicep-langserver.zip
-
-# install obsidian
-
 
 # looks
 # icon theme
@@ -80,10 +77,10 @@ for x in `ls $HOME/.config/waybar/scripts` ; do chmod +x $x; done
 cd "$currentdir"
 # wallpaper
 mkdir -p ~/Pictures/wallpapers
-cp  everforest.jpg ~/Pictures/wallpapers/
+cp  assets/everforest.jpg ~/Pictures/wallpapers/
 
 # cursors
-cd cursors
+cd assets
 mkdir -p "$HOME/.local/share/icons"
 tar xvf oreo-grey-cursors.tar.gz -C "$HOME/.local/share/icons"
 cd "$currentdir"
