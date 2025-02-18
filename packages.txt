@@ -1,6 +1,7 @@
 alacritty
 blueman
 dunst
+file-roller
 firefox
 gcc
 geany
