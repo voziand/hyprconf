@@ -19,6 +19,9 @@ mkdir -p ~/.local/share/applications
 mv assets/Obsidian.desktop ~/.local/share/applications
 
 # zen_downlaod_url=$(curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest | grep -Po '"browser_download_url": "\K[^"]*x86_64\.AppImage' | sort -u)
+# curl -Lo zen.AppImage "$zen_downlaod_url"
+# chmod +x zen.AppImage
+# mv zen.AppImage ~/.local/bin/zen.AppImage
 
 # install bicep extension
 latest_version=$(curl -s https://api.github.com/repos/Azure/bicep/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')
