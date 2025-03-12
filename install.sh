@@ -17,7 +17,7 @@ mv Obsidian.AppImage ~/.local/bin/Obsidian.AppImage
 echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
 mkdir -p ~/.local/share/applications
 mv assets/Obsidian.desktop ~/.local/share/applications
-# install zne browser
+# install zen browser
 zen_downlaod_url=$(curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest | grep -Po '"browser_download_url": "\K[^"]*x86_64\.AppImage' | sort -u)
 curl -Lo zen.AppImage "$zen_downlaod_url"
 chmod +x zen.AppImage
@@ -93,7 +93,7 @@ cp assets/everforest.jpg ~/Pictures/wallpapers/
 # cursors
 cd assets
 mkdir -p "$HOME/.local/share/icons"
-tar xvf oreo-grey-cursors.tar.gz -C "$HOME/.local/share/icons"
+tar xvf oreo-white-cursors.tar.gz -C "$HOME/.local/share/icons"
 cd "$currentdir"
 
 # Enable PipeWire and WirePlumber services
