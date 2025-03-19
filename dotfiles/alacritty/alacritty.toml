@@ -32,19 +32,19 @@ style = { shape = "Underline", blinking = "On" }
 size = 12
 
 [font.bold]
-family = "JetBrainsMono"
+family = "Macon"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono"
+family = "Macon"
 style = "BoldItalic"
 
 [font.italic]
-family = "JetBrainsMono"
+family = "Macon"
 style = "MediumItalic"
 
 [font.normal]
-family = "JetBrainsMono"
+family = "Macon"
 style = "Medium"
 
 [window]
