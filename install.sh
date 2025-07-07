@@ -24,19 +24,19 @@ curl -LO "https://github.com/Azure/bicep/releases/download/$latest_version/vscod
 codium --install-extension vscode-bicep.vsix
 
 # setup azure cli + bicep
-sudo zypper addrepo https://download.opensuse.org/repositories/Cloud:Tools/openSUSE_Tumbleweed/Cloud:Tools.repo
-sudo zypper refresh
-sudo zypper install azure-cli -y
+#sudo zypper addrepo https://download.opensuse.org/repositories/Cloud:Tools/openSUSE_Tumbleweed/Cloud:Tools.repo
+#sudo zypper refresh
+#sudo zypper install azure-cli -y
 
 # install bicep
-curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
-chmod +x ./bicep
-sudo mv ./bicep /usr/local/bin/bicep
+#curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+#chmod +x ./bicep
+#sudo mv ./bicep /usr/local/bin/bicep
 
 # install bicep language server
-curl -fLO https://github.com/Azure/bicep/releases/latest/download/bicep-langserver.zip
-sudo mkdir -p /usr/local/bin/bicep-langserver
-sudo unzip bicep-langserver.zip -d /usr/local/bin/bicep-langserver
+#curl -fLO https://github.com/Azure/bicep/releases/latest/download/bicep-langserver.zip
+#sudo mkdir -p /usr/local/bin/bicep-langserver
+#sudo unzip bicep-langserver.zip -d /usr/local/bin/bicep-langserver
 
 # looks
 # icon theme
