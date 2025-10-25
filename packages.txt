@@ -29,6 +29,7 @@ rofi-wayland
 slurp
 starship
 swappy
+swaybg
 thunar
 thunar-archive-plugin
 waybar
