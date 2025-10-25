@@ -1,6 +1,7 @@
 alacritty
 blueman
 dunst
+fastfetch
 file-roller
 firefox
 gcc
@@ -16,9 +17,9 @@ hyprwayland-scanner
 jq
 libnotify-tools
 mpd
-neofetch
 neovim
 NetworkManager-applet
+nextcloud-desktop
 npm
 nwg-look
 pipewire
