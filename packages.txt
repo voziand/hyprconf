@@ -1,5 +1,6 @@
 alacritty
 blueman
+brightnessctl
 dunst
 fastfetch
 file-roller
