@@ -1,0 +1,48 @@
+#!/bin/bash
+
+icon_path="~/.config/dunst/icons"
+function send_notification() {
+    vol=$(pactl list sinks | grep Volume: | awk 'FNR == 1 { print $5 }' | cut -f1 -d '%')
+        if [ "$vol" -ge 65 ]; then
+			lvl="high"
+		elif [ "$vol" -ge 40 ]; then
+			lvl="medium"
+		elif [ "$vol" -ge 0 ]; then
+			lvl="low"	
+		fi
+	dunstify -a "changevolume" -u low -r "9993" -h int:value:"$vol" -i "audio-volume-$lvl" " ${vol}%" -t 2000
+}
+
+case $1 in
+up)
+	muted=$(pactl list sinks | awk '/Mute:/ { print $2 }')
+	if [ "$muted" = "yes" ]; then
+		pactl set-sink-mute 0 toggle
+        	pactl set-sink-volume 0 +5%
+		send_notification $1
+	else
+        	pactl set-sink-volume 0 +5%
+       		send_notification $1 
+	fi
+	;;
+down)
+	muted=$(pactl list sinks | awk '/Mute:/ { print $2 }')
+	if [ "$muted" = "yes" ]; then
+		pactl set-sink-mute 0 toggle
+        	pactl set-sink-volume 0 -5%
+		send_notification $1
+	else
+        	pactl set-sink-volume 0 -5%
+		send_notification $1
+       fi
+	;;
+mute)
+	pactl set-sink-mute 0 toggle
+	muted=$(pactl list sinks | awk '/Mute:/ { print $2 }')
+	if [ "$muted" = "yes" ]; then
+		dunstify -i volume-muted -a "changevolume" -t 2000 -r 9993 -u low "Muted" -i "audio-volume-muted"
+	else
+		send_notification up
+	fi
+	;;
+esac
