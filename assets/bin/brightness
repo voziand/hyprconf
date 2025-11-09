@@ -1,0 +1,35 @@
+#!/bin/bash
+
+function send_notification() {
+    percent=$(brightnessctl -m | cut -d, -f4 | tr -d '%')
+
+    if [ "$percent" -ge 75 ]; then
+        level="high"
+    elif [ "$percent" -ge 40 ]; then
+        level="medium"
+    else
+        level="low"
+    fi
+    notify-send -a "brightness" -u low -r 9992 \
+        -h int:value:"$percent" \
+        -i "display-brightness-$level-symbolic" \
+        "$percent%" -t 2000
+}
+
+case $1 in
+  up)
+    brightnessctl set +4% > /dev/null
+    send_notification $1
+    ;;
+  
+  down)
+  	percent=$(brightnessctl -m | cut -d, -f4 | tr -d '%')
+    if [ $percent -le 4 ]; then
+    #	brightnessctl set 3% > /dev/null
+    	send_notification $1
+	else
+    	brightnessctl set 4%- > /dev/null
+    	send_notification $1
+	fi
+    ;;
+esac
