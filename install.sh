@@ -3,11 +3,6 @@ currentdir=$(pwd)
 # install packages
 xargs -a packages.txt sudo zypper install -y
 
-# install codium
-sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
-printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" | sudo tee -a /etc/zypp/repos.d/vscodium.repo
-sudo zypper in codium
-
 # install obsidian
 obsidian_download_url=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | grep -Po '"browser_download_url": "\K[^"]*\.AppImage' | grep -v 'arm64')
 curl -Lo Obsidian.AppImage "$obsidian_download_url"
@@ -17,11 +12,6 @@ mv Obsidian.AppImage ~/.local/bin/Obsidian.AppImage
 echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
 mkdir -p ~/.local/share/applications
 mv assets/Obsidian.desktop ~/.local/share/applications
-
-# install bicep extension
-latest_version=$(curl -s https://api.github.com/repos/Azure/bicep/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')
-curl -LO "https://github.com/Azure/bicep/releases/download/$latest_version/vscode-bicep.vsix"
-codium --install-extension vscode-bicep.vsix
 
 # setup azure cli + bicep
 #sudo zypper addrepo https://download.opensuse.org/repositories/Cloud:Tools/openSUSE_Tumbleweed/Cloud:Tools.repo
@@ -81,12 +71,6 @@ cd "$currentdir"
 # wallpaper
 mkdir -p ~/Pictures/wallpapers
 cp assets/everforest.jpg ~/Pictures/wallpapers/
-
-# cursors
-cd assets
-mkdir -p "$HOME/.local/share/icons"
-tar xvf oreo-white-cursors.tar.gz -C "$HOME/.local/share/icons"
-cd "$currentdir"
 
 # Enable PipeWire and WirePlumber services
 systemctl --user enable pipewire.service
