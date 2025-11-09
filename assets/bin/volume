@@ -35,13 +35,4 @@ case $1 in
         pactl set-sink-volume "$default_sink" -5%
         send_notification
         ;;
-	mute)
-		pactl set-sink-mute 0 toggle
-		muted=$(pactl get-sink-mute "$default_sink" | awk '/Mute:/ { print $2 }')
-		if [ "$muted" = "yes" ]; then
-			notify-send -i volume-muted -a "changevolume" -t 2000 -r 9993 -u low "Muted" -i "audio-volume-muted"
-		else
-			send_notification
-		fi
-		;;
 esac
