@@ -25,7 +25,6 @@ case $1 in
   down)
   	percent=$(brightnessctl -m | cut -d, -f4 | tr -d '%')
     if [ $percent -le 4 ]; then
-    #	brightnessctl set 3% > /dev/null
     	send_notification $1
 	else
     	brightnessctl set 4%- > /dev/null
