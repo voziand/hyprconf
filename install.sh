@@ -39,6 +39,8 @@ cd "$currentdir"
 git clone https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme.git
 cd Everforest-GTK-Theme/themes
 ./install.sh -c dark -t green -s compact -l
+cd ..
+sudo cp -r icons/Everforest-Dark /usr/share/icons/
 cd "$currentdir"
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --filesystem=$HOME/.icons
